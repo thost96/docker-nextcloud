@@ -1,4 +1,4 @@
-FROM nextcloud:latest
+FROM nextcloud:18.0.4
 
 LABEL maintainer="info@thorstenreichelt.de"
 
@@ -7,7 +7,6 @@ RUN apt-get update -qq && apt-get install -y -qq \
 	tzdata \
 	sudo \
 	nano \
-	mariadb-client \
      && rm -rf /var/lib/apt/lists/*
 
 RUN sed -i -e 's/# de_DE.UTF-8 UTF-8/de_DE.UTF-8 UTF-8/' /etc/locale.gen \
