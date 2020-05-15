@@ -5,7 +5,6 @@ LABEL maintainer="info@thorstenreichelt.de"
 RUN apt-get update -qq && apt-get install -y -qq \
         locales \
 	tzdata \
-	sudo \
 	nano \
      && rm -rf /var/lib/apt/lists/*
 
