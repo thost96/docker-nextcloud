@@ -2,10 +2,12 @@ FROM nextcloud:18.0.4
 
 LABEL maintainer="info@thorstenreichelt.de"
 
-RUN apt-get update -qq && apt-get install -y -qq \
-        locales \
-	tzdata \
-	nano \
+ARG DEBIAN_FRONTEND=noninteractive
+
+RUN apt-get update -qq && apt-get install -y -qq --no-install-recommends \
+        locales=2.28-10 \
+        tzdata=2020a-0+deb10u1 \
+        nano=3.2-3 \
      && rm -rf /var/lib/apt/lists/*
 
 RUN sed -i -e 's/# de_DE.UTF-8 UTF-8/de_DE.UTF-8 UTF-8/' /etc/locale.gen \
@@ -14,6 +16,4 @@ RUN sed -i -e 's/# de_DE.UTF-8 UTF-8/de_DE.UTF-8 UTF-8/' /etc/locale.gen \
 RUN cp /usr/share/zoneinfo/Europe/Berlin /etc/localtime
 
 ENV LANG="de_DE.UTF-8" \
-	TZ="Europe/Berlin"
-
-
+    TZ="Europe/Berlin"
