@@ -1,4 +1,4 @@
-FROM nextcloud:18.0.4
+FROM nextcloud:19.0.0
 
 LABEL maintainer="info@thorstenreichelt.de"
 
