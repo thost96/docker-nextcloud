@@ -4,6 +4,8 @@ Nextcloud with Add-ons as Docker Container
 
 ## Changelog
 
+1.6 Updated from Nextcloud 19.0.0 to 19.0.1
+
 1.5 Added Healthcheck using curl
 
 1.4 Update to Nextcloud 19.0.0 and removed 19.0.0-beta.
