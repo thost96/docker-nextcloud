@@ -88,7 +88,7 @@ jobs:
           add_git_labels: true
           repository: thost96/nextcloud
           tags: ${{ matrix.tag }}
-          build_args: BASEIMAGE=${{matrix.os}},LOCALES_VERSION=${{matrix.locales}},TZDATA_VERSION=${{matrix.tzdata}},NANO_VERSION=${{matrix.nano}},CURL_VERSION=${{matrix.curl}}
+          build_args: BASEIMAGE="nextcloud:${{matrix.tag}}",LOCALES_VERSION=${{matrix.locales}},TZDATA_VERSION=${{matrix.tzdata}},NANO_VERSION=${{matrix.nano}},CURL_VERSION=${{matrix.curl}}
 
   lint:
     name: Lint Dockerfile
