@@ -1,6 +1,9 @@
 # docker-nextcloud
 Nextcloud with Add-ons as Docker Container
 
+![Docker Image CI](https://github.com/thost96/docker-nextcloud/workflows/Docker%20Image%20CI/badge.svg)
+![Lint Code Base](https://github.com/thost96/docker-nextcloud/workflows/Lint%20Code%20Base/badge.svg)
+
 ## Docker RUN
 
     docker run \
