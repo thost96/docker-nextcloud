@@ -26,4 +26,4 @@ ENV LANG="de_DE.UTF-8" \
     LANGUAGE="de_DE.UTF-8" \
     TZ="Europe/Berlin"
 
-HEALTHCHECK --interval=1m --timeout=5s --start-period=60s --retries=3 CMD curl -f http://localhost/ || exit 1
+HEALTHCHECK --interval=1m --timeout=5s --retries=3 CMD curl -f http://localhost/ || exit 1
