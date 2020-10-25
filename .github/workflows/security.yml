@@ -32,6 +32,7 @@ jobs:
         - name: Trivy Action
           uses: homoluctus/gitrivy@v2  
           with:
+            issue: false
             image: ${{secrets.DOCKER_USERNAME }}/nextcloud:${{ matrix.tags }}
             token: ${{ secrets.GITHUB_TOKEN }}
   
