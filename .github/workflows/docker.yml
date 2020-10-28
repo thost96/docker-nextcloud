@@ -130,5 +130,5 @@ jobs:
         with:
             push: true
             tags: thost96/nextcloud:${{ matrix.tag }}      
-            build-args: BASEIMAGE=nextcloud:${{matrix.tag}},LOCALES_VERSION=${{matrix.locales}},TZDATA_VERSION=${{matrix.tzdata}},NANO_VERSION=${{matrix.nano}},CURL_VERSION=${{matrix.curl}}
+            build-args: BASEIMAGE=nextcloud:${{matrix.version}},LOCALES_VERSION=${{matrix.locales}},TZDATA_VERSION=${{matrix.tzdata}},NANO_VERSION=${{matrix.nano}},CURL_VERSION=${{matrix.curl}}
  
