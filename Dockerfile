@@ -6,7 +6,7 @@ LABEL maintainer="info@thorstenreichelt.de"
 
 ARG DEBIAN_FRONTEND=noninteractive
 ARG LOCALES_VERSION="2.28-10" 
-ARG TZDATA_VERSION="2020a-0+deb10u1" 
+ARG TZDATA_VERSION="2020d-0+deb10u1" 
 ARG NANO_VERSION="3.2-3"
 ARG CURL_VERSION="7.64.0-4+deb10u1"
 
