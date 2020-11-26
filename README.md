@@ -33,6 +33,7 @@ Nextcloud with Add-ons as Docker Container
 
 ## 1.6.1 (pending)
 * (thost96) - removed security checks from Docker Image CI Action into own Security Check Action
+* (thost96) - updated tzdata to 2020d-0+deb10u1
 
 ### 1.6.0 (27.08.2020)
 * (thost96) - changed Readme to global changelog version
