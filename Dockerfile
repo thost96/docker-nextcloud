@@ -1,6 +1,6 @@
-ARG BASEIMAGE=nextcloud:19.0.1
+ARG TAG=20.0.2
 # hadolint ignore=DL3006
-FROM ${BASEIMAGE}
+FROM nextcloud:${TAG}
 
 LABEL maintainer="info@thorstenreichelt.de"
 
