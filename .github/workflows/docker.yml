@@ -18,7 +18,7 @@ on:
 jobs:
   
   build:
-    name: Nextcloud ${{ matrix.version }}
+    name: Nextcloud ${{ matrix.tag }}
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
