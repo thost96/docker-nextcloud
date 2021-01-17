@@ -4,16 +4,11 @@ on:
   push:
     paths-ignore: 
       - "README.md"
+      - ".github/**"
     branches:
-    - master
+      - master
   schedule:
-    - cron:  "0 0 * * 0"
-  pull_request:
-    paths-ignore: 
-      - "README.md"
-    branches:
-    - master
-      
+    - cron: "0 0 * * 0"      
 
 jobs:
     
@@ -23,17 +18,22 @@ jobs:
      strategy:
       fail-fast: false
       matrix:
-        tags: [latest,20.0.2,20.0.1,20.0.0,19.0.4,19.0.3,19.0.2,19.0.1,19.0.0,18.0.6,18.0.5,18.0.4,18.0.3,18.0.1,17.0.3]
+        tag: [latest,20.0.4,20.0.3,20.0.2,20.0.1,20.0.0,19.0.4,19.0.3,19.0.2,19.0.1,19.0.0,18.0.6,18.0.5,18.0.4,18.0.3,18.0.1,17.0.3]
      steps:
-        - name: Login to DockerHub Registry
-          run: echo ${{ secrets.DOCKER_PASSWORD }} | docker login -u ${{ secrets.DOCKER_USERNAME }} --password-stdin
+        - name: Login to DockerHub
+          uses: docker/login-action@v1 
+          with:
+            username: ${{ secrets.DOCKER_USERNAME }}
+            password: ${{ secrets.DOCKER_PASSWORD }}    
+        
         - name: Pull docker image
-          run: docker pull ${{secrets.DOCKER_USERNAME }}/nextcloud:${{ matrix.tags }}
+          run: docker pull ${{ secrets.DOCKER_USERNAME }}/nextcloud:${{ matrix.tag }}
+        
         - name: Trivy Action
           uses: homoluctus/gitrivy@v2  
           with:
             issue: false
-            image: ${{secrets.DOCKER_USERNAME }}/nextcloud:${{ matrix.tags }}
+            image: ${{ secrets.DOCKER_USERNAME }}/nextcloud:${{ matrix.tag }}
             token: ${{ secrets.GITHUB_TOKEN }}
   
   snyk:
@@ -42,13 +42,14 @@ jobs:
     strategy:
       fail-fast: false
       matrix:        
-        tag: [latest, 19.0.1, 19.0.0]
+        tag: [latest,20.0.4,20.0.3,20.0.2,20.0.1,20.0.0,19.0.4,19.0.3,19.0.2,19.0.1,19.0.0,18.0.6,18.0.5,18.0.4,18.0.3,18.0.1,17.0.3]
     steps:
         - uses: actions/checkout@master
+
         - name: Run Snyk to check for vulnerabilities
           uses: snyk/actions/docker@master
           env:
             SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
           with:
-            image: ${{secrets.DOCKER_USERNAME }}/nextcloud:${{matrix.tag}}
+            image: ${{ secrets.DOCKER_USERNAME }}/nextcloud:${{ matrix.tag }}
             args: --severity-threshold=high

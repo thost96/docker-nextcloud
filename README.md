@@ -10,7 +10,6 @@ Nextcloud with Add-ons as Docker Container
       --name nextcloud \
       --hostname nextcloud \
       --restart always \      
-      -e 'TZ=Europe/Berlin' \
       --volume 'nextcloud:/var/www/html' \
       thost96/nextcloud:latest
 
@@ -22,18 +21,16 @@ Nextcloud with Add-ons as Docker Container
             container_name: nextcloud
             hostname: nextcloud        
             restart: always
-            environment:
-                - TZ=Europe/Berlin
             volumes:
                 - 'nextcloud:/var/www/html'
             image: 'thost96/nextcloud:latest'
 
-
 ## Changelog
 
-## 1.6.1 (pending)
+### 1.7.0 (17.01.2021)
 * (thost96) - removed security checks from Docker Image CI Action into own Security Check Action
 * (thost96) - updated tzdata to 2020d-0+deb10u1
+* (thost96) - simplified image building and changed to global standards
 
 ### 1.6.0 (27.08.2020)
 * (thost96) - changed Readme to global changelog version
