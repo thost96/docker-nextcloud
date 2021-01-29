@@ -19,13 +19,16 @@ Nextcloud with Add-ons as Docker Container
     services:
         nextcloud:
             container_name: nextcloud
-            hostname: nextcloud        
+            hostname: nextcloud     
             restart: always
             volumes:
                 - 'nextcloud:/var/www/html'
             image: 'thost96/nextcloud:latest'
 
 ## Changelog
+
+### 1.8.0 (29.01.2021)
+* (thost96) - added version 20.0.5 and 20.0.6
 
 ### 1.7.0 (17.01.2021)
 * (thost96) - removed security checks from Docker Image CI Action into own Security Check Action
