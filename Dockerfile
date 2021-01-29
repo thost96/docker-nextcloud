@@ -11,7 +11,7 @@ ENV LANGUAGE="de_DE.UTF-8" \
 
 RUN apt-get update -qq && apt-get install -y --no-install-recommends \
 	locales=2.28-10 \      
-	tzdata=2020d-0+deb10u1 \
+	tzdata=2020e-0+deb10u1 \
 	nano=3.2-3 \
 	curl=7.64.0-4+deb10u1 \
 	&& rm -rf /var/lib/apt/lists/*
