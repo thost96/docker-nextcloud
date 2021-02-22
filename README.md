@@ -27,8 +27,11 @@ Nextcloud with Add-ons as Docker Container
 
 ## Changelog
 
+### 1.8.2 (22.02.2021)
+* (thost96) - added version 21.0.0
+
 ### 1.8.1 (16.02.2021)
-* (thost96) - added version 20.0.7 
+* (thost96) - added version 20.0.7
 * (thost96) - removed nano from image
 
 ### 1.8.0 (29.01.2021)

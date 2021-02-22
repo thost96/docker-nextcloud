@@ -1,4 +1,4 @@
-ARG TAG=20.0.6
+ARG TAG=21.0.0
 
 FROM nextcloud:${TAG}
 
