@@ -4,7 +4,7 @@ Nextcloud with Add-ons as Docker Container
 ![Docker Image CI](https://github.com/thost96/docker-nextcloud/workflows/Docker%20Image%20CI/badge.svg)
 ![Lint Code Base](https://github.com/thost96/docker-nextcloud/workflows/Lint%20Code%20Base/badge.svg)
 
-## Docker RUN
+## Docker Run
 
     docker run \
       --name nextcloud \
@@ -25,7 +25,32 @@ Nextcloud with Add-ons as Docker Container
                 - 'nextcloud:/var/www/html'
             image: 'thost96/nextcloud:latest'
 
+## Docker Stack 
+
+    version: '3'
+    services:
+        nextcloud:
+            volumes:
+                - 'nextcloud:/var/www/html'
+            image: 'thost96/nextcloud:latest'
+            deploy:
+                update_config:
+                    order: start-first
+                    failure_action: rollback
+                    delay: 10s
+                rollback_config:
+                    parallelism: 0
+                    order: stop-first
+                restart_policy:
+                    condition: any
+                    delay: 5s
+                    max_attempts: 3
+
 ## Changelog
+
+### 1.8.4 (12.04.2021)
+* (thost96) - added version 20.0.9 and 21.0.1
+* (thost96) - added Docker Stack config
 
 ### 1.8.3 (02.03.2021)
 * (thost96) - added version 20.0.8
