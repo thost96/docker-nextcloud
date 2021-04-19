@@ -25,7 +25,7 @@ Nextcloud with Add-ons as Docker Container
                 - 'nextcloud:/var/www/html'
             image: 'thost96/nextcloud:latest'
 
-## Docker Stack 
+## Docker Stack
 
     version: '3'
     services:
@@ -47,6 +47,10 @@ Nextcloud with Add-ons as Docker Container
                     max_attempts: 3
 
 ## Changelog
+
+### 1.8.5 (19.04.2021)
+* (thost96) - fixed markdown typo
+* (thost96) - added older 19.x versions
 
 ### 1.8.4 (12.04.2021)
 * (thost96) - added version 20.0.9 and 21.0.1
