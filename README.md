@@ -48,6 +48,9 @@ Nextcloud with Add-ons as Docker Container
 
 ## Changelog
 
+### 1.8.6 (25.05.2021)
+* (thost96) - added version 21.0.2
+
 ### 1.8.5 (19.04.2021)
 * (thost96) - fixed markdown typo
 * (thost96) - added older 19.x versions
